@@ -1,7 +1,4 @@
 Site criado para ETA ENGENHARIA ( eng-eta.com )
-<html>
-<a href="eng-eta.com">Visite ETA SITE</a>
-</html>
 
 
 Seu formato é uma LandPage com informações da empresa e contatos para futuros negocios.
