@@ -1,0 +1,576 @@
+
+body {
+    font-family: Arial, sans-serif;
+    align-items: center;
+    background-color: #fff;
+    margin: 0;
+    padding-inline-start: 0;
+    
+}
+
+
+
+/* Estilos Gerais do Header */
+header {
+    background-color: #003366; /* Azul marinho */
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.logo {
+    max-width: 150px;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ajusta as margens dos itens da lista */
+.nav-list li {
+    margin-right: 50px; /* Menor espaçamento à esquerda */
+}
+
+.nav-list li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-list li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos do Menu Toggle (Hamburger) */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+/* Estilos das barras do ícone do menu */
+.menu-bar {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    margin: 4px 0;
+}
+
+/* Estilos para Dispositivos Mobile */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 20px; /* Ajuste a posição para a esquerda */
+        width: calc(100% - 40px); /* Ajusta a largura para manter margem dos dois lados */
+        background-color: #003366;
+        padding-top: 10px;
+    }
+
+    .nav-list li {
+        text-align: left;
+        margin: 10px 0;
+        padding-left: 15px; /* Adiciona padding para alinhar o texto à esquerda */
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+}
+
+
+
+
+
+
+
+/* Seção Início */
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url('EtaLogo.jpeg'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 51, 102, 0.6); /* Azul marinho com opacidade */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    color: white;
+    border: #002244;
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.hero-button {
+    background-color: #003366; /* Azul marinho */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #002244; /* Escurecendo no hover */
+}
+.hero h1 {
+    border: #002244;
+    color: white;
+    font-size: 4 em;
+    text-align: center;
+}
+
+.intro-text {
+    padding: 20px;
+    text-align: center;
+    color: #003366;
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.mySlides {
+    display: none;
+    position: relative;
+    height: auto; /* Ajusta automaticamente a altura */
+}
+
+.mySlides img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Mantém a proporção da imagem, cortando se necessário */
+}
+.slideshow-container .mySlides {
+    display: block;
+    height: 500px; /* Defina uma altura fixa se preferir, ajuste conforme necessário */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #003366; /* Azul marinho */
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 1.5em;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+
+
+
+/* Seção Nossos Serviços */
+#servicos {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#servicos h2 {
+    color: #003366; /* Azul marinho */
+    margin-bottom: 200px;
+}
+
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.service-card {
+    position: relative;
+    background-color: #fff;
+    border-bottom: 4px solid #003366; /* Azul marinho */
+    padding: 20px;
+    color: #003366; /* Azul marinho */
+    font-size: 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.service-card:hover {
+    background-color: #003366; /* Azul marinho */
+    color: #fff;
+    transform: translateY(-10px);
+}
+
+.service-card .card-content {
+    margin-bottom: 20px;
+}
+
+.service-card .card-icon {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+}
+
+@media (max-width: 768px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+
+/* Topo fixo */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #003366; /* Azul marinho */
+    z-index: 1000;
+}
+
+.logo {
+    max-height: 50px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+.contact-button {
+    background-color: #fff;
+    color: #003366;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contact-button:hover {
+    background-color: #003366;
+    color: #fff;
+}
+
+/* Botões flutuantes */
+.floating-buttons {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.floating-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s;
+}
+
+.floating-button:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp {
+    background-image: url('whatsapp-icon.png');
+
+}
+
+
+
+
+/* Seção Localização */
+#localizacao {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.location-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#localizacao h2 {
+    color: #003366; /* Azul marinho */
+    margin-bottom: 20px;
+}
+
+.map-responsive {
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: 2px solid #003366; /* Margem azul marinho ao redor do mapa */
+    border-radius: 10px;
+}
+
+
+
+
+
+/* Seção Clientes */
+#clientes {
+    padding: 40px 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.clientes-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+#clientes h2 {
+    color: #003366; /* Azul marinho */
+    margin-bottom: 20px;
+}
+
+/* Estilo do slider */
+.slider {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+}
+
+.slide-track {
+    display: flex;
+    width: calc(250px * 12); /* Ajuste conforme o número de imagens */
+    animation: scroll 20s linear infinite;
+}
+
+.slide {
+    width: 250px;
+    height: 150px; /* Ajuste conforme necessário */
+    flex-shrink: 0;
+    margin-right: 20px;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Assegura que todas as imagens ocupem todo o espaço disponível */
+    border-radius: 10px;
+    border: 2px solid #003366; /* Borda azul marinho */
+}
+
+/* Animação para deslizar as imagens */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 2)); /* Mover metade do número total de slides */
+    }
+}
+
+
+
+
+
+/* Estilos do Rodapé */
+footer {
+    background-color: #003366; /* Azul marinho */
+    color: #ffffff;
+    padding: 20px 20px; /*altura*/
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-left {
+    flex: 1;
+}
+
+.footer-logo {
+    max-width: 150px;
+}
+
+.footer-middle {
+    flex: 2;
+    text-align: center;
+}
+
+.footer-socials {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-socials li {
+    display: inline;
+}
+
+.footer-socials img {
+    width: 30px;
+    height: 30px;
+}
+
+.footer-middle p {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.footer-middle a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-middle a:hover {
+    text-decoration: underline;
+}
+
+.footer-rights {
+    flex: 1;
+    text-align: right;
+    font-size: 12px;
+}
+
+.footer-rights p {
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-rights {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
